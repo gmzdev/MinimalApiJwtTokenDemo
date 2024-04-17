@@ -1,0 +1,7 @@
+@MinimalApiDemo_HostAddress = http://localhost:5288
+
+GET {{MinimalApiDemo_HostAddress}}/weatherforecast/
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAMTIzLmNvbSIsInN1YiI6InRlc3RAMTIzLmNvbSIsImp0aSI6IjY0ZDNjZDM0LTlkOWItNDQ5My1hOTBmLWFlZDhlZjQwOTYyOSIsIm5iZiI6MTcxMTgxMTA4MywiZXhwIjoxNzExODE0NjgzLCJpYXQiOjE3MTE4MTEwODN9.xMnMX44klOr0dmv-ZuNZO6YRNKrQ-xzrmZFuG0N_nNM
+
+###
