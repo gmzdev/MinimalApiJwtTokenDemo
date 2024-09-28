@@ -5,7 +5,7 @@ using MinimalApi.Endpoint.Extensions;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<AppDbContext>(options => {
-    options.UseInMemoryDatabase("MinimalApiDemo");
+    options.UseSqlite("Data Source=MinimalApiDemo.db");
 });
 
 builder.Services.AddScoped<JwtTokenGenerator>();
@@ -15,6 +15,8 @@ builder.Services.AddJwt(builder.Configuration);
 builder.Services.AddAuthorization();
 builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
 builder.Services.AddCors();
+
+// builder.Services.AddProblemDetails();
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -41,6 +43,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseMiddleware<ExceptionMiddleware>();
 
 app.UseAuthentication();
 app.UseAuthorization(); 
